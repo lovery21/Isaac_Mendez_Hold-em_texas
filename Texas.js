@@ -33,6 +33,8 @@ function hand(holeCards, communityCards) {
   const values = [];
   const suits = [];
 
+
+    // Extraer valores y palos de todas las cartas
   for (let i = 0; i < allCards.length; i++) {
     const card = allCards[i];
     let value = card.slice(0, -1);
@@ -42,4 +44,12 @@ function hand(holeCards, communityCards) {
     suits.push(suit);
   }
 
-}
+    // Contar las ocurrencias de cada valor
+const valueCounts = {};
+for (let value of values) {
+    valueCounts[value] = (valueCounts[value] || 0) + 1;
+  }
+
+
+
+}//// Funtion hand
