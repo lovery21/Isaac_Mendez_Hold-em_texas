@@ -33,5 +33,13 @@ function hand(holeCards, communityCards) {
   const values = [];
   const suits = [];
 
+  for (let i = 0; i < allCards.length; i++) {
+    const card = allCards[i];
+    let value = card.slice(0, -1);
+    let suit = card.slice(-1);
+
+    values.push(value);
+    suits.push(suit);
+  }
 
 }
