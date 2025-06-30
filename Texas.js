@@ -27,3 +27,11 @@ function barajar(mazo) {
     [mazo[i], mazo[j]] = [mazo[j], mazo[i]]; // intercambia cartas
   }
 }
+// Función principal para evaluar la mano
+function hand(holeCards, communityCards) {
+  const allCards = holeCards.concat(communityCards);
+  const values = [];
+  const suits = [];
+
+
+}
