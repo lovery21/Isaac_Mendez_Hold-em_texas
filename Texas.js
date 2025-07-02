@@ -81,7 +81,21 @@ for(let suit in suitCounts){
   }
 }
 
+  const uniqueValues = [...new Set(values.map(v => valueMap[v]))];
+  uniqueValues.sort((a, b) => b - a);
 
-
+  // Identificar si hay una escalera
+  let straight = false;
+  for(let i =0;i<uniqueValues.length-5;i++){
+    if(
+      uniqueValues[i]-1== uniqueValues[i+1] &&
+      uniqueValues[i+1]-1== uniqueValues[i+2] &&
+      uniqueValues[i+2]-1== uniqueValues[i+3] &&
+      uniqueValues[i+3]-1== uniqueValues[i+4] )
+      {
+      straight = true;
+      break;
+    }
+  }
 
 }//// Funtion hand
