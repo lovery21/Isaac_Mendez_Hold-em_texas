@@ -105,8 +105,8 @@ for(let suit in suitCounts){
 const suiteCards=allCards.filter(card => card.endsWith(flushSuit));
 const nums=suiteCards.map(card=>valueMap[card.slice(0,-1)]);
 nums.sort((a, b) => a - b);
-  }
-for(let i = 0; i < nums.length - 4; i++) {
+  
+for(let i = 0; i < nums.length - 5; i++) {
     if (
       nums[i] + 1 === nums[i + 1] &&
       nums[i + 1] + 1 === nums[i + 2] &&
@@ -117,5 +117,19 @@ for(let i = 0; i < nums.length - 4; i++) {
       break;
     }
   }
+}
+if (straightFlush) return { type: "straight-flush", ranks: [] };
+  if (four) return { type: "four-of-a-kind", ranks: [four] };
+  if (three && pairs.length > 0) return { type: "full house", ranks: [three, pairs[0]] };
+  if (flushSuit) return { type: "flush", ranks: [] };
+  if (straight) return { type: "straight", ranks: [] };
+  if (three) return { type: "three-of-a-kind", ranks: [three] };
+  if (pairs.length >= 2) return { type: "two pair", ranks: [pairs[0], pairs[1]] };
+  if (pairs.length === 1) return { type: "pair", ranks: [pairs[0]] };
+
+  const high = uniqueValues[0];
+  const highCard = Object.keys(valueMap).find(k => valueMap[k] === high);
+  return { type: "high card", ranks: [highCard] };
+
 
 }//// Funtion hand
