@@ -69,10 +69,17 @@ for(let value in valueCounts){
   else if(valueCounts[value]===4){
     four=value;
   }
-  
+
 }
 
-
+// Identificar si hay un flush 
+let flushSuit= null;
+for(let suit in suitCounts){
+  if(suitCounts[suit]>=5){
+    flushSuit=suit;
+    break;
+  }
+}
 
 
 
