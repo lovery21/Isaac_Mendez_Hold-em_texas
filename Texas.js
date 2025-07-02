@@ -118,6 +118,8 @@ for(let i = 0; i < nums.length - 5; i++) {
     }
   }
 }
+
+// Determinar el tipo de mano
 if (straightFlush) return { type: "straight-flush", ranks: [] };
   if (four) return { type: "four-of-a-kind", ranks: [four] };
   if (three && pairs.length > 0) return { type: "full house", ranks: [three, pairs[0]] };
