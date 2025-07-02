@@ -59,5 +59,22 @@ let pairs=[];
 let three=null;
 let four=null;
 
+// Identificar pares, trios y cuartetos
+for(let value in valueCounts){
+  if(valueCounts[value]===2){
+    pairs.push(value);
+  }else if(valueCounts[value]===3){
+    three=value;
+  }
+  else if(valueCounts[value]===4){
+    four=value;
+  }
+  
+}
+
+
+
+
+
 
 }//// Funtion hand
