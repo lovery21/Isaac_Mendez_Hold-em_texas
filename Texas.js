@@ -106,6 +106,16 @@ const suiteCards=allCards.filter(card => card.endsWith(flushSuit));
 const nums=suiteCards.map(card=>valueMap[card.slice(0,-1)]);
 nums.sort((a, b) => a - b);
   }
-
+for(let i = 0; i < nums.length - 4; i++) {
+    if (
+      nums[i] + 1 === nums[i + 1] &&
+      nums[i + 1] + 1 === nums[i + 2] &&
+      nums[i + 2] + 1 === nums[i + 3] &&
+      nums[i + 3] + 1 === nums[i + 4]
+    ) {
+      straightFlush = true;
+      break;
+    }
+  }
 
 }//// Funtion hand
