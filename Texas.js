@@ -135,3 +135,15 @@ if (straightFlush) return { type: "straight-flush", ranks: [] };
 
 
 }//// Funtion hand
+
+function jugar(){
+  const mazo=crearMazo();
+  barajar(mazo);
+  const holeCards = mazo.slice(0, 2);
+  const communityCards = mazo.slice(2, 7);  
+  console.log("Hole Cards:", holeCards);
+  console.log("Community Cards:", communityCards);
+    const resultado=hand(holeCards, communityCards);
+  console.log("Resultado:", resultado);
+}
+jugar();
