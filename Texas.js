@@ -98,4 +98,14 @@ for(let suit in suitCounts){
     }
   }
 
+  // Identificar si hay una escalera real
+
+  let straightFlush = false;
+  if(flushSuit ){
+const suiteCards=allCards.filter(card => card.endsWith(flushSuit));
+const nums=suiteCards.map(card=>valueMap[card.slice(0,-1)]);
+nums.sort((a, b) => a - b);
+  }
+
+
 }//// Funtion hand
