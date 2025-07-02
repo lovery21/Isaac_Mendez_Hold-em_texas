@@ -50,6 +50,14 @@ for (let value of values) {
     valueCounts[value] = (valueCounts[value] || 0) + 1;
   }
 
+  // Contar las ocurrencias de cada palo
+const suitCounts= {};
+for (let suit of suits) {
+    suitCounts[suit] = (suitCounts[suit] || 0) + 1;
+  }
+let pairs=[];
+let three=null;
+let four=null;
 
 
 }//// Funtion hand
